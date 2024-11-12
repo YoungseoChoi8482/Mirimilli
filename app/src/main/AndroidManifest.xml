@@ -41,6 +41,27 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ReviewDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".WriteReviewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SelectPositionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RecommendJobActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PopularJobActivity"
+            android:exported="false" />
+        <activity
+            android:name=".JobEvaluationActivity"
+            android:exported="false" />
     </application>
 
 </manifest>

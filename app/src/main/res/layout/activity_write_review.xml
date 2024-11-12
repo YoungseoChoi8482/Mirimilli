@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/writeReviewScrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:id="@+id/writeReviewLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- 휴가가 많은가요? -->
+        <TextView
+            android:id="@+id/questionVacation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingTop="8dp"
+            android:text="휴가가 많은가요?"
+            android:textSize="16sp" />
+
+        <RatingBar
+            android:id="@+id/ratingBarVacation"
+            style="?android:attr/ratingBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:numStars="5"
+            android:rating="0"
+            android:stepSize="1" />
+
+        <!-- 작업량이 많은가요? -->
+        <TextView
+            android:id="@+id/questionWorkload"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingTop="16dp"
+            android:text="작업량이 많은가요?"
+            android:textSize="16sp" />
+
+        <RatingBar
+            android:id="@+id/ratingBarWorkload"
+            style="?android:attr/ratingBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:numStars="5"
+            android:rating="0"
+            android:stepSize="1" />
+
+        <!-- 피로도가 높은가요? -->
+        <TextView
+            android:id="@+id/questionFatigue"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:paddingTop="16dp"
+            android:text="피로도가 높은가요?"
+            android:textSize="16sp" />
+
+        <RatingBar
+            android:id="@+id/ratingBarFatigue"
+            style="?android:attr/ratingBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:numStars="5"
+            android:rating="0"
+            android:stepSize="1" />
+
+        <!-- 근무여건이 좋은가요? -->
+        <TextView
+            android:id="@+id/questionWorkingConditions"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:paddingTop="16dp"
+            android:text="근무여건이 좋은가요?"
+            android:textSize="16sp" />
+
+        <RatingBar
+            android:id="@+id/ratingBarWorkingConditions"
+            style="?android:attr/ratingBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="5"
+            android:layout_gravity="center"
+            android:rating="0"
+            android:stepSize="1" />
+
+        <!-- 훈련이 많은가요? -->
+        <TextView
+            android:id="@+id/questionTraining"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="16dp"
+            android:layout_gravity="center"
+            android:text="훈련이 많은가요?"
+            android:textSize="16sp" />
+
+        <RatingBar
+            android:id="@+id/ratingBarTraining"
+            style="?android:attr/ratingBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:numStars="5"
+            android:rating="0"
+            android:stepSize="1" />
+
+        <!-- 자율성이 높은가요? -->
+        <TextView
+            android:id="@+id/questionAutonomy"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:paddingTop="16dp"
+            android:text="자율성이 높은가요?"
+            android:textSize="16sp" />
+
+        <RatingBar
+            android:id="@+id/ratingBarAutonomy"
+            style="?android:attr/ratingBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="5"
+            android:layout_gravity="center"
+            android:rating="0"
+            android:stepSize="1" />
+
+        <EditText
+            android:id="@+id/editTextContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="리뷰 내용"
+            android:inputType="textMultiLine"
+            android:lines="4" />
+
+        <!-- 제출 버튼 -->
+        <Button
+            android:id="@+id/submitReviewButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="제출하기" />
+
+    </LinearLayout>
+</ScrollView>

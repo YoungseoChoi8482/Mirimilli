@@ -5,8 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.merge.databinding.ActivityMainBinding;
@@ -31,9 +34,9 @@ public class MainActivity extends AppCompatActivity {
         long curTime = System.currentTimeMillis();
         long gapTime = curTime - backBtnTime;
 
-        if(0<=gapTime && 2000>=gapTime) {
+        if (0 <= gapTime && 2000 >= gapTime) {
             super.onBackPressed();
-        }else{
+        } else {
             backBtnTime = curTime;
             Toast.makeText(this, "한번 더 누르면 종료됩니다.", Toast.LENGTH_SHORT).show();
         }
@@ -73,6 +76,35 @@ public class MainActivity extends AppCompatActivity {
         my = new Bottom_my();
 
         setFrag(0); // 첫 화면을 홈 화면으로 설정
+
+
+        Button RecommendJobMoreButton = findViewById(R.id.JobRecommendMoreButton);
+        RecommendJobMoreButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, RecommendJobActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button JobEvaluationMoreButton = findViewById(R.id.JobEvaluationMoreButton);
+        JobEvaluationMoreButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, JobEvaluationActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+        Button PopularJobMoreButton = findViewById(R.id.PopularJobMoreButton);
+        PopularJobMoreButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, PopularJobActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     // 프래그먼트 교체 함수
