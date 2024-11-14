@@ -1,5 +1,6 @@
 package com.example.merge;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -70,6 +71,12 @@ public class CheckListMain extends AppCompatActivity {
                 // 새로운 레이아웃을 checkBoxContainer에 추가
                 binding.checkBoxContainer.addView(newLayout);
             }
+        });
+
+        // 커뮤니티 버튼을 누르면 넘어간다
+        binding.community.setOnClickListener(view -> {
+            Intent intent = new Intent(CheckListMain.this,ChecklistCommunity.class);
+            startActivity(intent);
         });
     }
 

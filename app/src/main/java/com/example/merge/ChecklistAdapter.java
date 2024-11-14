@@ -16,6 +16,10 @@ public class ChecklistAdapter extends RecyclerView.Adapter<ChecklistAdapter.View
 
     private List<ChecklistItem> checklistItems;
 
+
+
+
+
     public ChecklistAdapter(List<ChecklistItem> checklistItems) {
         this.checklistItems = checklistItems;
     }
@@ -55,6 +59,8 @@ public class ChecklistAdapter extends RecyclerView.Adapter<ChecklistAdapter.View
 
 
     }
+
+
 
     @Override
     public int getItemCount() {

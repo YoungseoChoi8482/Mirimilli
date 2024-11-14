@@ -1,11 +1,20 @@
 package com.example.merge;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Toast;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
-
 import com.example.merge.databinding.ActivityChecklistCommunityBinding;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,6 +24,7 @@ public class ChecklistCommunity extends AppCompatActivity {
     private ActivityChecklistCommunityBinding binding;
     private ChecklistAdapter adapter;
     private List<ChecklistItem> checklistItems;
+    private DatabaseReference databaseReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,14 +36,45 @@ public class ChecklistCommunity extends AppCompatActivity {
 
         // RecyclerView 설정
         binding.recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
-        // 데이터 생성
         checklistItems = new ArrayList<>();
-        checklistItems.add(new ChecklistItem("양말 사제 가져가도 되냐?", "나이키 양말 가져가려하는데 가능?", "7분 전 | 익명"));
-        checklistItems.add(new ChecklistItem("공군 준비물 꿀팁", "노트북 가져가라 ㅇㅇ 훈련소에서 좋아한다", "24분 전 | 익명"));
-
-        // 어댑터 설정
         adapter = new ChecklistAdapter(checklistItems);
         binding.recyclerView.setAdapter(adapter);
+
+        // Firebase Realtime Database 인스턴스 초기화
+        databaseReference = FirebaseDatabase.getInstance().getReference("posts");
+
+        // 실시간으로 데이터 가져오기
+        fetchPostsInRealtime();
+
+        // 글쓰기 버튼을 누르면 글을 쓸 수 있는 곳으로 이동
+        binding.CommunityWriting.setOnClickListener(view -> {
+            Intent intent = new Intent(ChecklistCommunity.this, CheckListCommunityWriting.class);
+            startActivity(intent);
+        });
+    }
+
+    private void fetchPostsInRealtime() {
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @SuppressLint("NotifyDataSetChanged")
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                checklistItems.clear(); // 기존 리스트 초기화
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                    String title = snapshot.child("title").getValue(String.class);
+                    String content = snapshot.child("content").getValue(String.class);
+                    String timestamp = "방금 전 | 익명"; // 예시로 임의의 시간 값 설정
+
+                    if (title != null && content != null) {
+                        checklistItems.add(new ChecklistItem(title, content, timestamp));
+                    }
+                }
+                adapter.notifyDataSetChanged(); // RecyclerView 업데이트
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Toast.makeText(ChecklistCommunity.this, "데이터를 불러오지 못했습니다.", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }

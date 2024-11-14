@@ -16,9 +16,24 @@
         android:theme="@style/Theme.BottomMenu"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
+        <activity
+            android:name=".CheckListCommunityCommentReply"
+            android:exported="false" />
+        <activity
+            android:name=".CheckListCommunityWriting"
+            android:exported="false" />
         <activity android:name=".LetterToMe" />
         <activity android:name=".ListOfFavorite" />
-        <activity android:name=".ChecklistCommunity" />
+        <activity android:name=".ChecklistCommunity" /> <!-- 방금 이 ChecklistMain에서 community로 넘어가는걸 보기 위해  Intent를 집어넣음 -->
+        <activity
+            android:name=".CheckListMain"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".FavoriteWork"
             android:exported="false" />

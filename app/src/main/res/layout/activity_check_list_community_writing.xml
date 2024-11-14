@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:elevation="4dp"
+        >
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text= "준비물 커뮤니티"
+            android:textStyle="bold"
+            android:layout_marginTop="5dp"
+            android:layout_gravity="center"
+            android:textSize = "40dp"
+            android:textColor = "@color/black"
+
+            />
+    </com.google.android.material.appbar.MaterialToolbar>
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/CheckListCommunityWritingTitleToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:background="#FFFFFF"
+        android:elevation="4dp"
+        >
+
+        <TextView
+            android:id="@+id/CheckListCommunityWritingTitle"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text= "제목"
+            android:textStyle="normal"
+            android:layout_marginTop="5dp"
+            android:layout_gravity="left"
+            android:textSize = "20dp"
+            android:textColor = "@color/black"
+            />
+
+    </com.google.android.material.appbar.MaterialToolbar>
+
+
+
+    <EditText
+        android:id="@+id/editTextTitle"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="제목:"
+        />
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/CheckListCommunityWritingContextToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:background="#FFFFFF"
+        android:elevation="4dp"
+        >
+
+        <TextView
+            android:id="@+id/CheckListCommunityWritingContext"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text= "내용"
+            android:textStyle="normal"
+            android:layout_marginTop="5dp"
+            android:layout_gravity="left"
+            android:textSize = "20dp"
+            android:textColor = "@color/black"
+            />
+
+    </com.google.android.material.appbar.MaterialToolbar>
+
+
+    <EditText
+        android:id="@+id/editTextContent"
+        android:layout_width="match_parent"
+        android:layout_height="450dp"
+        android:hint="내용:"
+        android:gravity="top"
+        android:inputType="textMultiLine"
+        />
+
+    <Button
+        android:id="@+id/buttonPost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="게시하기"
+        android:layout_gravity="center"
+        />
+
+
+
+</LinearLayout>

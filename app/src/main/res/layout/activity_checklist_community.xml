@@ -29,6 +29,7 @@
     </com.google.android.material.appbar.MaterialToolbar>
 
     <Button
+        android:id="@+id/CommunityWriting"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="글쓰기"

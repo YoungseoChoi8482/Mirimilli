@@ -2,11 +2,17 @@ package com.example.merge;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 
 import com.example.merge.databinding.ActivityCheckListCommunityCommentBinding;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,6 +21,8 @@ public class CheckListCommunityComment extends AppCompatActivity {
 
     private ActivityCheckListCommunityCommentBinding binding;
     private CheckListCommunityCommentAdapter adapter;
+    private FirebaseDatabase database;
+    private DatabaseReference databaseReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,5 +60,23 @@ public class CheckListCommunityComment extends AppCompatActivity {
         adapter = new CheckListCommunityCommentAdapter(replyList);
         binding.replyRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         binding.replyRecyclerView.setAdapter(adapter);
+
+        database = FirebaseDatabase.getInstance(); // firebase 데이터 베이스 연동
+        databaseReference = database.getReference("User");  // DB 테이블 연동. User라고 쓴 이유는
+        // Firebase Console
+
+        databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                //파이어 베이스 데이터베이스의 데이터를 받아오는 곳
+                replyList.clear(); // 기존 배열리스트가 존재하지 않게 초기화
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
     }
 }
