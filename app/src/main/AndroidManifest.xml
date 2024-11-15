@@ -27,13 +27,9 @@
         <activity android:name=".ChecklistCommunity" /> <!-- 방금 이 ChecklistMain에서 community로 넘어가는걸 보기 위해  Intent를 집어넣음 -->
         <activity
             android:name=".CheckListMain"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:exported="true"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+
         <activity
             android:name=".FavoriteWork"
             android:exported="false" />
