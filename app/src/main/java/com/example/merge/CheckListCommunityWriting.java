@@ -7,6 +7,8 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.merge.databinding.ActivityCheckListCommunityWritingBinding;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -17,7 +19,7 @@ public class CheckListCommunityWriting extends AppCompatActivity {
 
     private ActivityCheckListCommunityWritingBinding binding;
     private DatabaseReference databaseReference;
-
+    private FirebaseUser currentUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,9 +29,9 @@ public class CheckListCommunityWriting extends AppCompatActivity {
         binding = ActivityCheckListCommunityWritingBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        // Realtime Database 인스턴스 초기화
+        // Firebase Realtime Database와 Authentication 인스턴스 초기화
         databaseReference = FirebaseDatabase.getInstance().getReference("posts");
-
+        currentUser = FirebaseAuth.getInstance().getCurrentUser();
 
         // 게시하기 버튼 클릭 리스너 설정
         binding.buttonPost.setOnClickListener(view -> {
@@ -49,6 +51,15 @@ public class CheckListCommunityWriting extends AppCompatActivity {
             return;
         }
 
+        // 현재 사용자가 로그인 상태인지 확인
+        if (currentUser == null) {
+            Toast.makeText(this, "로그인 후 게시물을 작성할 수 있습니다.", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        // 현재 사용자 ID (uid) 가져오기
+        String userId = currentUser.getUid();
+
         // 새로운 게시물 ID 생성
         String postId = databaseReference.push().getKey();
 
@@ -56,6 +67,7 @@ public class CheckListCommunityWriting extends AppCompatActivity {
         Map<String, Object> post = new HashMap<>();
         post.put("title", title);
         post.put("content", content);
+        post.put("userId", userId); // 작성자의 uid 추가
 
         // Realtime Database에 데이터 저장
         if (postId != null) {

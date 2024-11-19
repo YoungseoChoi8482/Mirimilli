@@ -37,7 +37,7 @@ public class ChecklistCommunity extends AppCompatActivity {
         // RecyclerView 설정
         binding.recyclerView.setLayoutManager(new LinearLayoutManager(this));
         checklistItems = new ArrayList<>();
-        adapter = new ChecklistAdapter(checklistItems);
+        adapter = new ChecklistAdapter(this,checklistItems);
         binding.recyclerView.setAdapter(adapter);
 
         // Firebase Realtime Database 인스턴스 초기화
@@ -60,12 +60,13 @@ public class ChecklistCommunity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 checklistItems.clear(); // 기존 리스트 초기화
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+
                     String title = snapshot.child("title").getValue(String.class);
                     String content = snapshot.child("content").getValue(String.class);
                     String timestamp = "방금 전 | 익명"; // 예시로 임의의 시간 값 설정
-
-                    if (title != null && content != null) {
-                        checklistItems.add(new ChecklistItem(title, content, timestamp));
+                    String postId = snapshot.getKey();
+                    if ( title != null && content != null && timestamp != null) {
+                        checklistItems.add(new ChecklistItem( title, content, timestamp,postId));
                     }
                 }
                 adapter.notifyDataSetChanged(); // RecyclerView 업데이트
