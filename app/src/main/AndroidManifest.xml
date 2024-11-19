@@ -28,11 +28,6 @@
         <activity
             android:name=".CheckListMain"
             android:exported="true"/>
-
-
-        <activity
-            android:name=".FavoriteWork"
-            android:exported="false" />
         <activity
             android:name=".Login"
             android:exported="false" />
@@ -68,7 +63,7 @@
             android:name=".RecommendJobActivity"
             android:exported="false" />
         <activity
-            android:name=".PopularJobActivity"
+            android:name=".FavoriteWork"
             android:exported="false" />
         <activity
             android:name=".JobEvaluationActivity"
