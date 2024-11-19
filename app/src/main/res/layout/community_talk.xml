@@ -4,14 +4,17 @@
     android:layout_height="wrap_content"
     android:orientation="horizontal"
     android:padding="8dp"
-    android:clickable="true">
+ >
 
     <!-- Left side with texts -->
     <LinearLayout
+        android:id="@+id/someTextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:clickable="true"
+        >
 
         <!-- Title of the post -->
         <TextView

@@ -36,12 +36,11 @@
             android:id="@+id/commentTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="익명"
             android:textSize="16sp"
             android:textColor="@color/black"
             android:layout_marginBottom="4dp"
-            android:background="@drawable/rounded_edittext"
-            android:padding="4dp" />
+
+             />
 
         <TextView
             android:id="@+id/commentContent"
@@ -91,6 +90,7 @@
             android:textColor="@color/black" />
 
         <Button
+            android:id="@+id/replyWritingButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center|right"

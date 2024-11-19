@@ -1,11 +1,12 @@
 package com.example.merge;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
-
 
 import com.example.merge.databinding.ActivityCheckListCommunityCommentBinding;
 import com.google.firebase.database.DataSnapshot;
@@ -23,6 +24,8 @@ public class CheckListCommunityComment extends AppCompatActivity {
     private CheckListCommunityCommentAdapter adapter;
     private FirebaseDatabase database;
     private DatabaseReference databaseReference;
+    private List<String> replyList;
+    private String postId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,11 +34,16 @@ public class CheckListCommunityComment extends AppCompatActivity {
         binding = ActivityCheckListCommunityCommentBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        // Intent로 전달받은 postId가져오기
+        postId = getIntent().getStringExtra("postId");
+        if (postId != null) {
+            // Firebase에서 postId를 이용해 데이터 가져오기
+            databaseReference = FirebaseDatabase.getInstance().getReference("posts").child(postId);
+            fetchPostDetails();
+            fetchComments();
+        }
 
-        // 댓글 정보 설정 (예시 데이터)
-        binding.commentTitle.setText("익명");
-        binding.commentContent.setText("초콜릿 가져가도 되나요?");
-        binding.commentTime.setText("24분 전");
+
 
         // 북마크 아이콘 클릭 리스너 설정
         binding.bookmarkIcon.setOnClickListener(v -> {
@@ -50,11 +58,13 @@ public class CheckListCommunityComment extends AppCompatActivity {
             binding.bookmarkIcon.setTag(!isSelected);
         });
 
-        // 답글 리스트 설정 (예시 데이터 추가)
-        List<String> replyList = new ArrayList<>();
-        replyList.add("숨겨서 가져가면 돼요!");
-        replyList.add("훈련소에서 안 걸리면 됩니다.");
-        replyList.add("작은 건 괜찮을 거예요.");
+
+
+        // 답글 리스트 설정 및 RecyclerView 초기화
+        replyList = new ArrayList<>();
+        adapter = new CheckListCommunityCommentAdapter(replyList);
+        binding.replyRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        binding.replyRecyclerView.setAdapter(adapter);
 
         // 어댑터 초기화 및 RecyclerView 설정
         adapter = new CheckListCommunityCommentAdapter(replyList);
@@ -76,6 +86,59 @@ public class CheckListCommunityComment extends AppCompatActivity {
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
+            }
+        });
+
+        binding.replyWritingButton.setOnClickListener(v -> {
+            Intent intent = new Intent(this, CheckListCommunityCommentReply.class);
+            intent.putExtra("postId",postId);
+            startActivity(intent);
+        });
+
+
+    }
+
+    private void fetchPostDetails() {
+        databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                // Firebase에서 해당 ID에 대한 데이터를 가져와 처리
+                String title = dataSnapshot.child("title").getValue(String.class);
+                String content = dataSnapshot.child("content").getValue(String.class);
+                // 가져온 데이터를 UI에 표시하는 로직 추가
+
+                // 가져온 데이터를 UI에 표시하는 로직 추가
+                if (title != null) {
+                    binding.commentTitle.setText(title);
+                }
+                if (content != null) {
+                    binding.commentContent.setText(content);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                // 에러 처리
+            }
+        });
+    }
+    private void fetchComments() {
+        databaseReference.child("comments").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                replyList.clear(); // 기존 리스트 초기화
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                    String reply = snapshot.child("content").getValue(String.class);
+                    if (reply != null) {
+                        replyList.add(reply);
+                    }
+                }
+                adapter.notifyDataSetChanged(); // RecyclerView 업데이트
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Toast.makeText(CheckListCommunityComment.this, "댓글을 불러오지 못했습니다: " + databaseError.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }
