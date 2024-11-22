@@ -14,7 +14,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="20dp"
-            android:text="준비물 체크리스트"
+            android:text="준비물 체크"
             android:textSize="30sp"
             android:textStyle="bold" />
 
@@ -53,36 +53,13 @@
             android:text="+"
             android:visibility="gone" />
 
+        <!-- 체크박스 컨테이너 추가 -->
         <LinearLayout
             android:id="@+id/checkBoxContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_marginTop="20dp" />
 
-            <!-- 첫 번째 기본 체크박스와 삭제 버튼 -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:orientation="horizontal">
-
-                <CheckBox
-                    android:id="@+id/checkBox"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="기본 체크박스" />
-
-                <Button
-                    android:id="@+id/deleteCheckBox"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:backgroundTint="#7E7E7E"
-                    android:text="X"
-                    android:visibility="gone" />
-            </LinearLayout>
-        </LinearLayout>
     </LinearLayout>
 </ScrollView>
