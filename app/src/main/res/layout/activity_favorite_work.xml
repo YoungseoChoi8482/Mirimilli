@@ -1,0 +1,224 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <!-- 뒤로가기 버튼 -->
+    <ImageButton
+        android:id="@+id/btn_back1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/back"
+        android:backgroundTint="#ffffff"
+        android:layout_margin="20dp" />
+
+    <!-- 제목 -->
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="인기 특기 추천"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp" />
+
+    <TextView
+        android:id="@+id/subTitleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/titleTextView"
+        android:layout_marginTop="4dp" />
+
+    <!-- 지원현황 -->
+    <TextView
+        android:id="@+id/supportStatusLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="지원현황"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_below="@id/titleTextView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="36dp" />
+
+    <!-- 날짜 선택 Spinner -->
+    <Spinner
+        android:id="@+id/dateSpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:spinnerMode="dropdown"
+        android:layout_alignTop="@id/supportStatusLabel"
+        android:layout_alignBottom="@id/supportStatusLabel"
+        android:layout_marginStart="8dp"
+        android:layout_toEndOf="@id/supportStatusLabel"
+        android:layout_marginEnd="16dp" />
+
+
+    <!-- 군별 버튼 -->
+    <LinearLayout
+        android:id="@+id/soilders"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_below="@id/supportStatusLabel"
+        android:layout_marginTop="24dp">
+
+        <Button
+            android:id="@+id/armyButton"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="육군"
+            android:layout_weight="1"
+            android:layout_marginEnd="8dp" />
+
+        <Button
+            android:id="@+id/navyButton"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:text="해군"
+            android:layout_marginEnd="8dp" />
+
+        <Button
+            android:id="@+id/airForceButton"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:text="공군"
+            android:layout_marginEnd="8dp" />
+
+        <Button
+            android:id="@+id/rokmcButton"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:text="해병대" />
+    </LinearLayout>
+
+    <!-- 순위 레이아웃 -->
+    <RelativeLayout
+        android:id="@+id/topRankLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/soilders"
+        android:layout_marginTop="50dp">
+
+        <!-- Top 1 -->
+        <LinearLayout
+            android:id="@+id/top1Layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/top1TopText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Top 1"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:gravity="center" />
+
+            <ImageView
+                android:id="@+id/top1Image"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_marginTop="8dp"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/ic_launcher" />
+
+            <TextView
+                android:id="@+id/top1BottomText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Name\nRate"
+                android:textSize="10sp"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <!-- Top 2 -->
+        <LinearLayout
+            android:id="@+id/top2Layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="30dp"
+            android:layout_below="@id/top1Layout"
+            android:layout_marginTop="30dp"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/top2TopText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Top 2"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:gravity="center" />
+
+            <ImageView
+                android:id="@+id/top2Image"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="8dp"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/ic_launcher" />
+
+            <TextView
+                android:id="@+id/top2BottomText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Name\nRate"
+                android:textSize="10sp"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <!-- Top 3 -->
+        <LinearLayout
+            android:id="@+id/top3Layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="30dp"
+            android:layout_below="@id/top1Layout"
+            android:layout_marginTop="30dp"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/top3TopText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Top 3"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:gravity="center" />
+
+            <ImageView
+                android:id="@+id/top3Image"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="8dp"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/ic_launcher" />
+
+            <TextView
+                android:id="@+id/top3BottomText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Name\nRate"
+                android:textSize="10sp"
+                android:gravity="center" />
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

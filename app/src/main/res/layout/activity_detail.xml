@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Header Section -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="48dp">
+
+        <!-- Title -->
+        <TextView
+            android:id="@+id/detailTitleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="보직 상세"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <!-- Back Button -->
+        <ImageButton
+            android:id="@+id/backButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_alignParentStart="true"
+            android:background="@android:color/transparent"
+            android:contentDescription="뒤로가기 버튼"
+            android:src="@android:drawable/ic_menu_close_clear_cancel" />
+    </RelativeLayout>
+
+    <!-- Job Description -->
+    <TextView
+        android:id="@+id/jobDescriptionTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="8dp"
+        android:text="보직 설명이 여기에 표시됩니다."
+        android:textSize="16sp"
+        android:layout_marginBottom="72dp"/>
+
+
+    <RatingBar
+        android:id="@+id/detailRatingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:numStars="5"
+        android:stepSize="0.1"
+        android:isIndicator="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="8dp" />
+
+    <!-- Write Review Button -->
+    <Button
+        android:id="@+id/writeReviewButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="리뷰 작성하기"
+        android:visibility="gone" />
+
+
+    <!-- Review Count -->
+    <TextView
+        android:id="@+id/reviewCountTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="리뷰 0개"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <!-- Sort Options -->
+    <LinearLayout
+        android:id="@+id/sortOptions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal">
+
+        <!-- Sort by Likes -->
+        <Button
+            android:id="@+id/sortByLikesButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="좋아요 순" />
+
+        <!-- Sort by Newest -->
+        <Button
+            android:id="@+id/sortByNewestButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="최신순" />
+
+        <!-- Sort by Oldest -->
+        <Button
+            android:id="@+id/sortByOldestButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="오래된순" />
+    </LinearLayout>
+
+    <!-- Review RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/reviewRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_weight="1" />
+</LinearLayout>

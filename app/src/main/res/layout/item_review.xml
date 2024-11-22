@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="8dp"
+    android:background="@android:color/white">
+
+    <!-- 리뷰어 이름과 타임스탬프를 가로로 배치 (옵션) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- 리뷰어 이름 -->
+        <TextView
+            android:id="@+id/reviewAuthorTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="작성자"
+            android:textStyle="bold"
+            android:textSize="16sp" />
+
+
+        <TextView
+            android:id="@+id/timestampTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2024-04-26 14:30"
+            android:textSize="12sp"
+            android:layout_marginStart="8dp"
+            android:textColor="#888888" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="4dp">
+
+        <!-- 리뷰 내용 -->
+        <TextView
+            android:id="@+id/reviewContentTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="리뷰 내용"
+            android:textSize="16sp" />
+
+        <!-- 평점 텍스트 -->
+        <TextView
+            android:id="@+id/reviewRatingTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4.5"
+            android:textSize="14sp"
+            android:textColor="#FFD700"
+            android:layout_marginStart="8dp" />
+    </LinearLayout>
+
+    <!-- 좋아요 버튼과 좋아요 수 -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp">
+
+        <!-- 좋아요 버튼 -->
+        <ImageButton
+            android:id="@+id/likeButton"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/unfilled_like"
+            android:contentDescription="Like Button"
+            android:background="@android:color/transparent"
+            android:layout_marginEnd="4dp" />
+
+        <!-- 좋아요 수 -->
+        <TextView
+            android:id="@+id/likeCountTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+</LinearLayout>
