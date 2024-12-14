@@ -47,9 +47,12 @@ dependencies {
     implementation("com.google.firebase:firebase-database:21.0.0")
     implementation("androidx.activity:activity:1.9.3")
     implementation("com.google.firebase:firebase-firestore:25.1.1")
+    implementation ("androidx.core:core-splashscreen:1.0.0")
+
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.2.1")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.6.1")
+
 
     // Room 라이브러리 추가
     val roomVersion = "2.5.2" // 최신 버전 확인 권장

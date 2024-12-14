@@ -23,4 +23,8 @@
         <!-- 기본 글꼴 설정 -->
         <item name="android:fontFamily">@font/moneygraphy_rounded</item>
     </style>
+    <style name="Theme.YourApp.Splash" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+
+    </style>
+
 </resources>
