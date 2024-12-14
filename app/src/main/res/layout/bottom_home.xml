@@ -23,6 +23,8 @@
             android:orientation="horizontal">
 
             <TextView
+                android:fontFamily="@font/gangwon"
+
                 android:id="@+id/JobRecommended"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -33,6 +35,8 @@
                 android:textStyle="bold" />
 
             <Button
+                android:fontFamily="@font/gangwon"
+
                 android:id="@+id/JobRecommendMoreButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -54,6 +58,8 @@
             android:padding="16dp">
 
             <TextView
+                android:fontFamily="@font/gangwon"
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -62,6 +68,8 @@
                 android:textSize="16sp" />
 
             <Button
+                android:fontFamily="@font/gangwon"
+
                 android:id="@+id/InputInformationButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -82,6 +90,8 @@
             android:orientation="horizontal">
 
             <TextView
+                android:fontFamily="@font/gangwon"
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
@@ -90,6 +100,8 @@
                 android:textStyle="bold" />
 
             <Button
+                android:fontFamily="@font/gangwon"
+
                 android:id="@+id/JobEvaluationMoreButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -119,6 +131,8 @@
                 android:background="@drawable/rounded_card_background">
 
                 <TextView
+                    android:fontFamily="@font/gangwon"
+
                     android:id="@+id/top1TextView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -132,6 +146,8 @@
                     android:drawablePadding="8dp" />
 
                 <TextView
+                    android:fontFamily="@font/gangwon"
+
                     android:id="@+id/top2TextView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -144,6 +160,8 @@
                     android:drawablePadding="8dp" />
 
                 <TextView
+                    android:fontFamily="@font/gangwon"
+
                     android:id="@+id/top3TextView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -169,6 +187,8 @@
             android:orientation="horizontal">
 
             <TextView
+                android:fontFamily="@font/gangwon"
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
@@ -177,6 +197,8 @@
                 android:textStyle="bold" />
 
             <Button
+                android:fontFamily="@font/gangwon"
+
                 android:id="@+id/PopularJobMoreButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

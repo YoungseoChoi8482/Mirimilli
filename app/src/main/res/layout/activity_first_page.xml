@@ -12,6 +12,8 @@
         android:src="@drawable/logo" />
 
     <Button
+        android:fontFamily="@font/gangwon"
+
         android:id="@+id/btn_sign"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -23,6 +25,8 @@
         android:backgroundTint="@color/btn"/>
 
     <Button
+        android:fontFamily="@font/gangwon"
+
         android:id="@+id/btn_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

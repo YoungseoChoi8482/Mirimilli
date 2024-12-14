@@ -13,7 +13,10 @@
         android:elevation="4dp"
         >
 
+
         <TextView
+            android:fontFamily="@font/gangwon"
+
             android:id="@+id/title"
             android:layout_centerHorizontal="true"
             android:layout_width="wrap_content"
@@ -38,6 +41,8 @@
         >
 
         <TextView
+            android:fontFamily="@font/gangwon"
+
             android:id="@+id/CheckListCommunityWritingTitle"
             android:layout_centerHorizontal="true"
             android:layout_width="wrap_content"
@@ -55,6 +60,8 @@
 
 
     <EditText
+        android:fontFamily="@font/gangwon"
+
         android:id="@+id/editTextTitle"
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -71,6 +78,8 @@
         >
 
         <TextView
+            android:fontFamily="@font/gangwon"
+
             android:id="@+id/CheckListCommunityWritingContext"
             android:layout_centerHorizontal="true"
             android:layout_width="wrap_content"
@@ -87,6 +96,8 @@
 
 
     <EditText
+        android:fontFamily="@font/gangwon"
+
         android:id="@+id/editTextContent"
         android:layout_width="match_parent"
         android:layout_height="450dp"
@@ -96,6 +107,8 @@
         />
 
     <Button
+        android:fontFamily="@font/gangwon"
+
         android:id="@+id/buttonPost"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

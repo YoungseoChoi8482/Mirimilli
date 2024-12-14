@@ -21,6 +21,8 @@
             android:src="@drawable/white123" />
 
         <TextView
+            android:fontFamily="@font/gangwon"
+
             android:id="@+id/dday_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -33,6 +35,8 @@
             android:layout_margin="8dp" />
 
         <TextView
+            android:fontFamily="@font/gangwon"
+
             android:id="@+id/dday_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -44,6 +48,8 @@
             android:layout_margin="8dp" />
 
         <TextView
+            android:fontFamily="@font/gangwon"
+
             android:id="@+id/dday_remaining_days"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

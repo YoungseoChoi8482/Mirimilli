@@ -12,6 +12,8 @@
         android:orientation="vertical">
 
         <TextView
+            android:fontFamily="@font/gangwon"
+
             android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -23,6 +25,8 @@
             android:layout_marginBottom="16dp" />
 
         <TextView
+            android:fontFamily="@font/gangwon"
+
             android:id="@+id/subtitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -33,6 +37,8 @@
             android:layout_marginBottom="24dp" />
 
         <TextView
+            android:fontFamily="@font/gangwon"
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="학과"
@@ -41,6 +47,8 @@
             android:layout_marginBottom="8dp" />
 
         <AutoCompleteTextView
+            android:fontFamily="@font/gangwon"
+
             android:id="@+id/department_autocomplete"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -50,6 +58,8 @@
             android:layout_marginBottom="16dp" />
 
         <TextView
+            android:fontFamily="@font/gangwon"
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="자격증"
@@ -58,6 +68,8 @@
             android:layout_marginBottom="8dp" />
 
         <AutoCompleteTextView
+            android:fontFamily="@font/gangwon"
+
             android:id="@+id/certificate_autocomplete"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -73,6 +85,8 @@
             android:layout_marginBottom="24dp"
             android:layout_marginTop="10dp">
             <Button
+                android:fontFamily="@font/gangwon"
+
                 android:id="@+id/add_button"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -84,6 +98,8 @@
                 android:layout_marginStart="8dp" />
 
             <Button
+                android:fontFamily="@font/gangwon"
+
                 android:id="@+id/completeBtn"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -97,6 +113,8 @@
 
 
         <TextView
+            android:fontFamily="@font/gangwon"
+
             android:id="@+id/recommended_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -119,6 +137,8 @@
                 android:background="@color/black">
 
                 <TextView
+                    android:fontFamily="@font/gangwon"
+
                     android:id="@+id/recommended_position1"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -132,6 +152,8 @@
                     android:layout_margin="2dp" />
 
                 <TextView
+                    android:fontFamily="@font/gangwon"
+
                     android:id="@+id/recommended_position2"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"

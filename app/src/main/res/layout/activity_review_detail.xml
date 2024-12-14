@@ -5,6 +5,8 @@
     android:padding="16dp">
 
     <TextView
+        android:fontFamily="@font/gangwon"
+
         android:id="@+id/reviewerNameTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -13,6 +15,8 @@
         android:textSize="18sp" />
 
     <TextView
+        android:fontFamily="@font/gangwon"
+
         android:id="@+id/reviewContentTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -21,6 +25,8 @@
         android:textSize="16sp" />
 
     <TextView
+        android:fontFamily="@font/gangwon"
+
         android:id="@+id/reviewLikesTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

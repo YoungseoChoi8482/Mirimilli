@@ -13,6 +13,8 @@
 
         <!-- Title -->
         <TextView
+            android:fontFamily="@font/gangwon"
+
             android:id="@+id/detailTitleTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -34,6 +36,8 @@
 
     <!-- Job Description -->
     <TextView
+        android:fontFamily="@font/gangwon"
+
         android:id="@+id/jobDescriptionTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -70,6 +74,8 @@
 
     <!-- Review Count -->
     <TextView
+        android:fontFamily="@font/gangwon"
+
         android:id="@+id/reviewCountTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -88,6 +94,8 @@
 
         <!-- Sort by Likes -->
         <Button
+            android:fontFamily="@font/gangwon"
+
             android:id="@+id/sortByLikesButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -95,6 +103,8 @@
 
         <!-- Sort by Newest -->
         <Button
+            android:fontFamily="@font/gangwon"
+
             android:id="@+id/sortByNewestButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -103,6 +113,8 @@
 
         <!-- Sort by Oldest -->
         <Button
+            android:fontFamily="@font/gangwon"
+
             android:id="@+id/sortByOldestButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

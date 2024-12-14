@@ -13,6 +13,8 @@
         android:background="#FFFFFF"
         >
         <TextView
+            android:fontFamily="@font/gangwon"
+
             android:id="@+id/title"
             android:layout_centerHorizontal="true"
             android:layout_width="wrap_content"
@@ -37,6 +39,8 @@
         android:layout_gravity="center"
         android:layout_marginTop="100dp"
         android:text="저장된 보직"
+        android:fontFamily="@font/gangwon"
+
         android:textStyle="bold"
         android:textSize="25sp"
         app:cornerRadius="16dp"
@@ -55,6 +59,8 @@
         android:padding="10dp"
         android:layout_gravity="center"
         android:layout_marginTop="50dp"
+        android:fontFamily="@font/gangwon"
+
         android:text="좋아요 누른 목록"
         android:textStyle="bold"
         android:textSize="25sp"

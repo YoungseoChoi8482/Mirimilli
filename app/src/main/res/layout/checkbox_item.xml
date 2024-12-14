@@ -10,9 +10,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
+        android:fontFamily="@font/gangwon"
+
         android:text="기본 체크박스" />
 
     <Button
+        android:fontFamily="@font/gangwon"
+
         android:id="@+id/delete_real_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

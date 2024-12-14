@@ -15,6 +15,8 @@
 
         <!-- 리뷰어 이름 -->
         <TextView
+            android:fontFamily="@font/gangwon"
+
             android:id="@+id/reviewAuthorTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -24,6 +26,8 @@
 
 
         <TextView
+            android:fontFamily="@font/gangwon"
+
             android:id="@+id/timestampTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -42,6 +46,8 @@
 
         <!-- 리뷰 내용 -->
         <TextView
+            android:fontFamily="@font/gangwon"
+
             android:id="@+id/reviewContentTextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -51,6 +57,8 @@
 
         <!-- 평점 텍스트 -->
         <TextView
+            android:fontFamily="@font/gangwon"
+
             android:id="@+id/reviewRatingTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -79,6 +87,8 @@
 
         <!-- 좋아요 수 -->
         <TextView
+            android:fontFamily="@font/gangwon"
+
             android:id="@+id/likeCountTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

@@ -13,6 +13,8 @@
         android:elevation="4dp">
 
         <TextView
+            android:fontFamily="@font/gangwon"
+
             android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -33,6 +35,8 @@
         android:background="@android:color/white">
 
         <TextView
+            android:fontFamily="@font/gangwon"
+
             android:id="@+id/commentTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -44,6 +48,8 @@
             />
 
         <TextView
+            android:fontFamily="@font/gangwon"
+
             android:id="@+id/commentContent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -53,6 +59,8 @@
             android:layout_marginBottom="8dp" />
 
         <TextView
+            android:fontFamily="@font/gangwon"
+
             android:id="@+id/commentTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -62,6 +70,7 @@
             android:layout_marginBottom="8dp" />
 
         <ImageView
+
             android:id="@+id/bookmark_icon"
             android:layout_width="24dp"
             android:layout_height="24dp"
@@ -82,6 +91,8 @@
         android:elevation="4dp">
 
         <TextView
+            android:fontFamily="@font/gangwon"
+
             android:id="@+id/reply"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -92,6 +103,8 @@
             android:textColor="@color/black" />
 
         <Button
+            android:fontFamily="@font/gangwon"
+
             android:id="@+id/replyWritingButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

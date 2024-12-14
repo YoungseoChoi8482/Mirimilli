@@ -8,6 +8,8 @@
     android:layout_marginBottom="10dp">
 
     <TextView
+        android:fontFamily="@font/gangwon"
+
         android:id="@+id/position_number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -17,6 +19,8 @@
         android:layout_gravity="center_vertical" />
 
     <TextView
+        android:fontFamily="@font/gangwon"
+
         android:id="@+id/position_name"
         android:layout_width="0dp"
         android:layout_height="wrap_content"

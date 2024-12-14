@@ -23,6 +23,8 @@
             android:layout_gravity="start" />
 
         <TextView
+            android:fontFamily="@font/gangwon"
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="20dp"
@@ -35,6 +37,8 @@
             android:textColor="#FFFFFF" />
 
         <TextView
+            android:fontFamily="@font/gangwon"
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="이메일"
@@ -44,6 +48,8 @@
             android:textColor="#000000" />
 
         <EditText
+            android:fontFamily="@font/gangwon"
+
             android:id="@+id/et_id"
             android:layout_width="match_parent"
             android:layout_height="48dp"
@@ -54,6 +60,8 @@
             android:padding="12dp" />
 
         <TextView
+            android:fontFamily="@font/gangwon"
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="비밀번호"
@@ -63,6 +71,8 @@
             android:textColor="#000000" />
 
         <EditText
+            android:fontFamily="@font/gangwon"
+
             android:id="@+id/et_password"
             android:layout_width="match_parent"
             android:layout_height="48dp"
@@ -73,6 +83,8 @@
             android:padding="12dp" />
 
         <TextView
+            android:fontFamily="@font/gangwon"
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="이름"
@@ -82,6 +94,8 @@
             android:textColor="#000000" />
 
         <EditText
+            android:fontFamily="@font/gangwon"
+
             android:id="@+id/et_name"
             android:layout_width="match_parent"
             android:layout_height="48dp"
@@ -92,6 +106,8 @@
             android:padding="12dp" />
 
         <Button
+            android:fontFamily="@font/gangwon"
+
             android:id="@+id/btn_register"
             android:layout_width="match_parent"
             android:layout_height="48dp"
