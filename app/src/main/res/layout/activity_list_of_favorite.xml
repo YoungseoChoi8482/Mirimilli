@@ -12,19 +12,19 @@
         android:layout_height="wrap_content"
         android:background="#FFFFFF"
         >
-            <TextView
-                android:id="@+id/title"
-                android:layout_centerHorizontal="true"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text= "즐겨찾기 목록"
-                android:textStyle="bold"
-                android:layout_marginTop="5dp"
-                android:layout_gravity="center"
-                android:textSize = "40dp"
-                android:textColor = "@color/black"
+        <TextView
+            android:id="@+id/title"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text= "즐겨찾기 목록"
+            android:textStyle="bold"
+            android:layout_marginTop="5dp"
+            android:layout_gravity="center"
+            android:textSize = "40dp"
+            android:textColor = "@color/black"
 
-                />
+            />
 
     </com.google.android.material.appbar.MaterialToolbar>
 
@@ -47,24 +47,6 @@
         app:iconGravity="start"
         />
 
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/communityButton"
-        android:layout_width="280dp"
-        android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="50dp"
-        android:text="준비물 커뮤니티"
-        android:textStyle="bold"
-        android:textSize="25sp"
-        app:cornerRadius="16dp"
-        android:backgroundTint="#BDBDBD"
-        android:elevation="500dp"
-        android:translationZ="8dp"
-        app:icon="@drawable/star"
-        app:iconGravity="start"
-        />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/likedJobsButton"

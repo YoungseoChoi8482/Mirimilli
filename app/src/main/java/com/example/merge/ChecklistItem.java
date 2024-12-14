@@ -1,3 +1,5 @@
+//ChecklistItem.java
+
 package com.example.merge;
 
 public class ChecklistItem {
@@ -5,12 +7,14 @@ public class ChecklistItem {
     private String content;
     private String time;
     private String postId;
+    private boolean isBookmarked;
 
     public ChecklistItem(String title, String content, String time,String postId) {
         this.title = title;
         this.content = content;
         this.time = time;
         this.postId = postId;
+        this.isBookmarked = false;
 
     }
 
@@ -30,6 +34,12 @@ public class ChecklistItem {
         return postId;
     }
 
+    public boolean isBookmarked() {
+        return isBookmarked;
+    }
 
+    public void setBookmarked(boolean bookmarked) {
+        isBookmarked = bookmarked;
+    }
 
 }

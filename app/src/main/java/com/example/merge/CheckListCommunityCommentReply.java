@@ -42,6 +42,7 @@ public class CheckListCommunityCommentReply extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 addCommentToPost();
+                finish();
             }
         });
     }

@@ -25,11 +25,6 @@ public class ListOfFavorite extends AppCompatActivity {
             startActivity(intent);
         });
 
-        // 준비물 커뮤니티 페이지로 이동 (임시 코드, 추후 구현 필요)
-        binding.communityButton.setOnClickListener(v -> {
-            // 준비물 커뮤니티 페이지로 이동
-        });
-
         // 좋아요 누른 목록 페이지로 이동 (임시 코드, 추후 구현 필요)
         binding.likedJobsButton.setOnClickListener(v -> {
             Intent intent = new Intent(ListOfFavorite.this, LikedReviewsActivity.class);
