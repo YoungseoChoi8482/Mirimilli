@@ -1,8 +1,5 @@
 package com.example.merge;
 
-import android.content.Context;
-import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -10,20 +7,19 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class RecommendJobActivity extends AppCompatActivity {
+public class RecommendJobActivity2 extends AppCompatActivity {
 
     private LinearLayout parentLayout;
     private ArrayAdapter<String> certificateAdapter;
@@ -38,7 +34,7 @@ public class RecommendJobActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_recommend_job);
+        setContentView(R.layout.activity_recommend_job2);
 
         // Initialize Firebase Firestore
         db = FirebaseFirestore.getInstance();
@@ -53,7 +49,7 @@ public class RecommendJobActivity extends AppCompatActivity {
         AutoCompleteTextView certificateAutoComplete = findViewById(R.id.certificate_autocomplete);
         String[] certificatesArray = {"네트워크 관리사", "정보처리기사", "건축산업기사", "토목산업기사","전기기사",
                 "건축설비산업기사","전자계산기기사", "공조냉동기계산업기사", "위험물관리산업기사", "기계설계기사",
-                "열처리기능사", "전자계산기산업기사", "전기기능사","산업안전기사", "용접산업기사", "기계정비산업기사", "운전면허", "information"};
+                "열처리기능사", "전자계산기산업기사", "전기기능사","산업안전기사", "용접산업기사", "기계정비산업기사","information"};
         certificateAdapter = new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, certificatesArray);
         certificateAutoComplete.setAdapter(certificateAdapter);
 
@@ -71,12 +67,13 @@ public class RecommendJobActivity extends AppCompatActivity {
 
         // 입력 완료 버튼
         Button completeBtn = findViewById(R.id.completeBtn);
+        recommendedPosition1 = findViewById(R.id.recommended_position1);
+        recommendedPosition2 = findViewById(R.id.recommended_position2);
 
         completeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 fetchRecommendedJobs();
-
             }
         });
     }
@@ -99,19 +96,12 @@ public class RecommendJobActivity extends AppCompatActivity {
         newCertificateField.setPadding(12, 12, 12, 12);
         newCertificateField.setTextColor(getResources().getColor(R.color.black));
 
-        String certificate2 = newCertificateField.getText().toString();
-        SharedPreferences sharedPref = getSharedPreferences("certificate2", Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor2 = sharedPref.edit();
-        editor2.putString("key2", certificate2);
-        editor2.apply();
-
         // AutoCompleteTextView에 어댑터 설정
         newCertificateField.setAdapter(certificateAdapter);
 
         // 새로운 AutoCompleteTextView를 parentLayout에 추가
         int index = parentLayout.indexOfChild(findViewById(R.id.certificate_autocomplete));
         parentLayout.addView(newCertificateField, index + 1);
-
 
         // Add the text from the new field to the list when user enters something
         newCertificateField.setOnFocusChangeListener((v, hasFocus) -> {
@@ -128,94 +118,55 @@ public class RecommendJobActivity extends AppCompatActivity {
             return;
         }
 
+        // 기본 자격증 입력값 추가
         AutoCompleteTextView certificateAutoComplete = findViewById(R.id.certificate_autocomplete);
         String baseCertificate = certificateAutoComplete.getText().toString();
         if (!baseCertificate.isEmpty()) {
             certificates.add(baseCertificate);
         }
 
-        String certificate1 = certificateAutoComplete.getText().toString();
-        SharedPreferences sharedPref = getSharedPreferences("certificate1", Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putString("key1", certificate1);
-        editor.apply();
-
-        // Save certifications to Firebase Realtime Database
-        String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
-        FirebaseDatabase.getInstance()
-                .getReference("users")
-                .child(userId)
-                .child("certificates")
-                .setValue(certificates)
-                .addOnCompleteListener(task -> {
-                    if (task.isSuccessful()) {
-                        Toast.makeText(this, "자격증이 저장되었습니다.", Toast.LENGTH_SHORT).show();
-                    } else {
-                        Toast.makeText(this, "자격증 저장에 실패했습니다.", Toast.LENGTH_SHORT).show();
-                    }
-                });
-
-        // Existing Firestore logic to fetch recommended jobs
+        // Firestore 쿼리
         db.collection("milliJobs")
                 .whereEqualTo("department", department)
                 .get()
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful() && task.getResult() != null) {
                         boolean matchFound = false;
-                        String recommended1 = "";
-                        String recommended2 = "";
 
                         for (QueryDocumentSnapshot document : task.getResult()) {
                             List<String> jobCertificates = (List<String>) document.get("certificates");
                             List<String> recommendedPositions = (List<String>) document.get("recommended");
 
                             if (jobCertificates != null && recommendedPositions != null) {
+                                // 자격증 리스트에서 하나라도 일치하는지 확인
                                 for (String cert : certificates) {
                                     if (jobCertificates.contains(cert)) {
+                                        // 추천 보직 2개 확인
                                         if (recommendedPositions.size() >= 2) {
-                                            recommended1 = recommendedPositions.get(0);
-                                            recommended2 = recommendedPositions.get(1);
+                                            recommendedPosition1.setText(recommendedPositions.get(0));
+                                            recommendedPosition2.setText(recommendedPositions.get(1));
+                                        } else {
+                                            recommendedPosition1.setText("추천 보직 정보 부족");
+                                            recommendedPosition2.setText("추천 보직 정보 부족");
                                         }
                                         matchFound = true;
-                                        break;
+                                        break; // 하나라도 일치하면 반복 종료
                                     }
                                 }
                             }
                             if (matchFound) break;
                         }
 
-                        if (matchFound) {
-                            saveToFirestore(department, certificates, recommended1, recommended2);
-
-                            // Activity 결과 반환
-                            Intent resultIntent = new Intent();
-                            resultIntent.putExtra("department", department);
-                            resultIntent.putStringArrayListExtra("certificates", new ArrayList<>(certificates));
-                            resultIntent.putExtra("recommended1", recommended1);
-                            resultIntent.putExtra("recommended2", recommended2);
-                            setResult(RESULT_OK, resultIntent);
-                            finish();
-                        } else {
+                        if (!matchFound) {
                             Toast.makeText(this, "일치하는 추천 보직을 찾을 수 없습니다.", Toast.LENGTH_SHORT).show();
+                            recommendedPosition1.setText("");
+                            recommendedPosition2.setText("");
                         }
                     } else {
                         Toast.makeText(this, "데이터를 가져오는 데 실패했습니다.", Toast.LENGTH_SHORT).show();
+                        Log.e("FirebaseError", "Error getting documents: ", task.getException());
                     }
                 });
     }
-
-
-    private void saveToFirestore(String department, List<String> certificates, String recommended1, String recommended2) {
-        String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
-
-        // Firebase Firestore에 데이터 저장
-        db.collection("userRecommendations").document(userId)
-                .set(new UserRecommendation(department, certificates, recommended1, recommended2))
-                .addOnSuccessListener(aVoid -> Log.d("Firebase", "데이터 저장 성공"))
-                .addOnFailureListener(e -> Log.e("Firebase", "데이터 저장 실패", e));
-    }
-
-
-
 
 }
