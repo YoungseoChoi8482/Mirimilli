@@ -11,6 +11,7 @@ public class Job implements Parcelable {
     private String description;
     private float rating;
     private int reviewCount;
+    private boolean isBookmarked;
 
     // 기본 생성자 (Firestore에서 필요)
     public Job() {}
@@ -71,6 +72,14 @@ public class Job implements Parcelable {
 
     public void setReviewCount(int reviewCount) {
         this.reviewCount = reviewCount;
+    }
+
+    public boolean isBookmarked() {
+        return isBookmarked;
+    }
+
+    public void setBookmarked(boolean bookmarked) {
+        isBookmarked = bookmarked;
     }
 
     // Parcelable 구현

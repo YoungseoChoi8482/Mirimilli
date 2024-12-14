@@ -46,6 +46,14 @@
             android:text="/  평점: 10"
             android:textSize="14sp" />
 
+        <ImageView
+            android:id="@+id/bookmark_icon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="100dp"
+            android:src="@drawable/scrab"
+            android:contentDescription="북마크 아이콘" />
+
     </LinearLayout>
 
 

@@ -19,7 +19,6 @@
             android:id="@+id/JobRecommend"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
@@ -112,12 +111,39 @@
             android:orientation="vertical"
             android:padding="16dp">
 
-            <!-- RecyclerView for displaying top 3 rated jobs -->
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/topRatedJobsRecyclerView"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:scrollbars="vertical" />
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/top1TextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="top1"/>
+
+                <TextView
+                    android:id="@+id/top2TextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="top2"/>
+
+                <TextView
+                    android:id="@+id/top3TextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="top3"/>
+            </LinearLayout>
+
+
+
+
+            <!--            &lt;!&ndash; RecyclerView for displaying top 3 rated jobs &ndash;&gt;-->
+<!--            <androidx.recyclerview.widget.RecyclerView-->
+<!--                android:id="@+id/topRatedJobsRecyclerView"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:scrollbars="vertical" />-->
 
         </FrameLayout>
 
