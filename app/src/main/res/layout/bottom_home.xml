@@ -107,45 +107,56 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/JobEvaluation"
-            android:background="@color/design_default_color_background"
-            android:orientation="vertical"
-            android:padding="16dp">
+            android:background="@android:color/white"
+            android:padding="16dp"
+            android:elevation="4dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:padding="12dp"
+                android:background="@drawable/rounded_card_background">
 
                 <TextView
                     android:id="@+id/top1TextView"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="top1"/>
+                    android:background="@drawable/rank1_background"
+                    android:padding="16dp"
+                    android:text="1위: 보직 이름 (평점)"
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:gravity="center_vertical"
+                    android:drawablePadding="8dp" />
 
                 <TextView
                     android:id="@+id/top2TextView"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="top2"/>
+                    android:background="@drawable/rank2_background"
+                    android:padding="16dp"
+                    android:text="2위: 보직 이름 (평점)"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp"
+                    android:gravity="center_vertical"
+                    android:drawablePadding="8dp" />
 
                 <TextView
                     android:id="@+id/top3TextView"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="top3"/>
+                    android:background="@drawable/rank3_background"
+                    android:padding="16dp"
+                    android:text="3위: 보직 이름 (평점)"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp"
+                    android:gravity="center_vertical"
+                    android:drawablePadding="8dp" />
             </LinearLayout>
-
-
-
-
-            <!--            &lt;!&ndash; RecyclerView for displaying top 3 rated jobs &ndash;&gt;-->
-<!--            <androidx.recyclerview.widget.RecyclerView-->
-<!--                android:id="@+id/topRatedJobsRecyclerView"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:scrollbars="vertical" />-->
-
         </FrameLayout>
+
 
 
         <LinearLayout
