@@ -7,10 +7,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import com.example.merge.databinding.BottomMyBinding;
 
@@ -38,6 +39,11 @@ public class Bottom_my extends Fragment {
         // 즐겨찾기 목록 화면으로 넘어가기
         binding.favoriteList.setOnClickListener(v->{
             Intent intent = new Intent(getActivity(), ListOfFavorite.class);
+            startActivity(intent);
+        });
+
+        binding.btnAlarm.setOnClickListener(v->{
+            Intent intent = new Intent(getActivity(), Setting2.class);
             startActivity(intent);
         });
 

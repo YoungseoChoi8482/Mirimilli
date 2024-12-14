@@ -71,12 +71,13 @@
         android:padding="10dp"
         android:layout_gravity="center"
         android:layout_marginTop="50dp"
-        android:text="환경 설정"
+        android:text="알림 설정"
         android:textStyle="bold"
         android:textSize="25sp"
         app:cornerRadius="16dp"
         android:elevation="8dp"
-        android:translationZ="8dp" />
+        android:translationZ="8dp"
+        android:id="@+id/btnAlarm"/>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnLogout"
