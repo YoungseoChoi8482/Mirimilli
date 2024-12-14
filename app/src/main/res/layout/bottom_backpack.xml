@@ -18,8 +18,9 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="20dp"
             android:text="준비물 체크"
-            android:textSize="30sp"
-            android:textStyle="bold" />
+            android:textSize="40sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -36,7 +37,7 @@
                 android:layout_height="wrap_content"
                 android:backgroundTint="#7E757575"
                 android:text="수정"
-                android:textSize="15sp" />
+                android:textSize="20sp" />
 
             <Button
                 android:fontFamily="@font/gangwon"
@@ -47,7 +48,7 @@
                 android:layout_marginLeft="10dp"
                 android:backgroundTint="#7E757575"
                 android:text="커뮤니티"
-                android:textSize="15sp" />
+                android:textSize="20sp" />
         </LinearLayout>
 
         <Button

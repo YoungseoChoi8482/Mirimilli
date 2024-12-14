@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:fontFamily="@font/gangwon"
-
+        android:textSize="20dp"
         android:text="기본 체크박스" />
 
     <Button

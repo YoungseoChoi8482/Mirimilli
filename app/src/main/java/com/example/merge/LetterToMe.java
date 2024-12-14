@@ -13,8 +13,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.merge.databinding.ActivityLetterToMeBinding;
+import com.google.android.material.datepicker.MaterialDatePicker;
 
 import java.util.Calendar;
+import java.util.Locale;
 
 public class LetterToMe extends AppCompatActivity implements OnFragmentInteractionListener {
 
@@ -67,23 +69,28 @@ public class LetterToMe extends AppCompatActivity implements OnFragmentInteracti
     }
 
     private void showDatePickerDialog() {
-        // 현재 날짜 가져오기
-        final Calendar calendar = Calendar.getInstance();
-        int year = calendar.get(Calendar.YEAR);
-        int month = calendar.get(Calendar.MONTH);
-        int day = calendar.get(Calendar.DAY_OF_MONTH);
+        // MaterialDatePicker Builder 생성
+        MaterialDatePicker<Long> datePicker = MaterialDatePicker.Builder.datePicker()
+                .setTitleText("날짜 선택") // 다이얼로그 제목
+                .setSelection(MaterialDatePicker.todayInUtcMilliseconds()) // 초기값: 오늘 날짜
+                .build();
 
-        // DatePickerDialog 생성
-        DatePickerDialog datePickerDialog = new DatePickerDialog(this,
-                (view, year1, monthOfYear, dayOfMonth) -> {
-                    // 선택한 날짜를 EditText에 표시
-                    String selectedDate = year1 + "-" + (monthOfYear + 1) + "-" + dayOfMonth;
-                    binding.etDate.setText(selectedDate);
+        // 날짜 선택 콜백 등록
+        datePicker.addOnPositiveButtonClickListener(selection -> {
+            // 선택된 날짜를 Calendar 객체로 변환
+            Calendar calendar = Calendar.getInstance();
+            calendar.setTimeInMillis(selection);
 
+            // 선택된 날짜를 포맷팅하여 EditText에 표시
+            String selectedDate = String.format(Locale.getDefault(), "%d-%02d-%02d",
+                    calendar.get(Calendar.YEAR),
+                    calendar.get(Calendar.MONTH) + 1,
+                    calendar.get(Calendar.DAY_OF_MONTH));
+            binding.etDate.setText(selectedDate);
+        });
 
-                }, year, month, day);
-
-        datePickerDialog.show();
+        // 다이얼로그 표시
+        datePicker.show(getSupportFragmentManager(), "MATERIAL_DATE_PICKER");
     }
 
 
