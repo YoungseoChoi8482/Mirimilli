@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/white">
 
 
 
@@ -17,7 +18,8 @@
         app:itemTextColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:menu="@menu/bottom_menu"
-        tools:layout_editor_absoluteX="1dp" />
+        tools:layout_editor_absoluteX="1dp"
+        android:background="#F6F6F6"/>
 
     <FrameLayout
         android:id="@+id/main_frame"
@@ -26,7 +28,8 @@
         app:layout_constraintBottom_toTopOf="@+id/bottom_navi"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/white">
 
 
     </FrameLayout>
