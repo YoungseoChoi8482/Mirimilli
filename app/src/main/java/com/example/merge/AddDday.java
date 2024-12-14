@@ -94,10 +94,6 @@ public class AddDday extends AppCompatActivity {
             return;
         }
 
-        if (selectedDate.before(Calendar.getInstance())) {
-            Toast.makeText(this, "D-day 날짜는 오늘 이후로 설정하세요.", Toast.LENGTH_SHORT).show();
-            return;
-        }
 
         // D-day 데이터 생성
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());

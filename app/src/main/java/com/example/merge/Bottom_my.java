@@ -43,7 +43,7 @@ public class Bottom_my extends Fragment {
         });
 
         binding.btnAlarm.setOnClickListener(v->{
-            Intent intent = new Intent(getActivity(), Setting.class);
+            Intent intent = new Intent(getActivity(), Setting2.class);
             startActivity(intent);
         });
 
