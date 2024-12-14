@@ -29,6 +29,14 @@
 
     </com.google.android.material.appbar.MaterialToolbar>
 
+
+    <FrameLayout
+        android:id="@+id/letter_to_me_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        />
+
     <EditText
     android:id="@+id/etTitle"
     android:layout_width="match_parent"

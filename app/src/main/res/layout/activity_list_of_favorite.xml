@@ -48,6 +48,7 @@
 
 
     <com.google.android.material.button.MaterialButton
+        android:id="@+id/prepare"
         android:layout_width="280dp"
         android:layout_height="wrap_content"
         android:padding="10dp"

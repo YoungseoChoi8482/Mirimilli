@@ -17,4 +17,10 @@
         <item name="android:backgroundTint">#7E7E7E</item>
         <item name="android:textColor">#FFFFFF</item>
     </style>
+
+    <!-- 앱의 테마 -->
+    <style name="Theme.MyApp" parent="@android:style/TextAppearance.Small">
+        <!-- 기본 글꼴 설정 -->
+        <item name="android:fontFamily">@font/moneygraphy_rounded</item>
+    </style>
 </resources>

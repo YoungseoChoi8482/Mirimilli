@@ -11,6 +11,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ServerValue;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -38,6 +39,7 @@ public class CheckListCommunityWriting extends AppCompatActivity {
             uploadDataToRealtimeDatabase();
             // 게시 후 RecyclerView가 있는 액티비티로 이동
             startActivity(new Intent(CheckListCommunityWriting.this, ChecklistCommunity.class));
+            finish();
         });
     }
 
@@ -63,11 +65,14 @@ public class CheckListCommunityWriting extends AppCompatActivity {
         // 새로운 게시물 ID 생성
         String postId = databaseReference.push().getKey();
 
+        DatabaseReference newPostRef = databaseReference.push();
         // 데이터 저장 형식 설정
         Map<String, Object> post = new HashMap<>();
         post.put("title", title);
         post.put("content", content);
         post.put("userId", userId); // 작성자의 uid 추가
+        post.put("timestamp", ServerValue.TIMESTAMP);
+
 
         // Realtime Database에 데이터 저장
         if (postId != null) {
@@ -84,3 +89,4 @@ public class CheckListCommunityWriting extends AppCompatActivity {
         }
     }
 }
+//checklistcommunitywriting

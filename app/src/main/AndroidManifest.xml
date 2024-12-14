@@ -17,6 +17,9 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".FavoritesActivity"
+            android:exported="false" />
+        <activity
             android:name=".CheckListCommunityCommentReply"
             android:exported="false" />
         <activity
@@ -27,7 +30,7 @@
         <activity android:name=".ChecklistCommunity" /> <!-- 방금 이 ChecklistMain에서 community로 넘어가는걸 보기 위해  Intent를 집어넣음 -->
         <activity
             android:name=".CheckListMain"
-            android:exported="true"/>
+            android:exported="true" />
         <activity
             android:name=".Login"
             android:exported="false" />
@@ -47,8 +50,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CheckListCommunityComment"
-            android:exported="false"/>
+        <activity
+            android:name=".CheckListCommunityComment"
+            android:exported="false" />
         <activity
             android:name=".ReviewDetailActivity"
             android:exported="false" />

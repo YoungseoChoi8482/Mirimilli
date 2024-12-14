@@ -55,5 +55,6 @@
         android:contentDescription="Star icon"
         android:clickable="true"
         android:focusable="true"
+        android:visibility="gone"
         />
 </LinearLayout>

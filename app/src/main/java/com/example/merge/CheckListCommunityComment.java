@@ -15,8 +15,11 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 public class CheckListCommunityComment extends AppCompatActivity {
 
@@ -100,11 +103,33 @@ public class CheckListCommunityComment extends AppCompatActivity {
 
     private void fetchPostDetails() {
         databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+            final SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.getDefault());
+
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 // Firebase에서 해당 ID에 대한 데이터를 가져와 처리
                 String title = dataSnapshot.child("title").getValue(String.class);
                 String content = dataSnapshot.child("content").getValue(String.class);
+
+
+
+                // 타임스탬프를 Long 타입으로 가져오기
+                Long timestampLong = dataSnapshot.child("timestamp").getValue(Long.class);
+                String timestamp;
+
+                if (timestampLong != null) {
+                    // 밀리초 단위의 타임스탬프를 Date 객체로 변환
+                    Date date = new Date(timestampLong);
+
+                    // 날짜 포맷팅
+                    String formattedDate = sdf.format(date);
+
+                    // 추가 텍스트와 결합
+                    timestamp = formattedDate + " | 익명";
+                } else {
+                    // 타임스탬프가 없을 경우 기본값 설정
+                    timestamp = "방금 전 | 익명";
+                }
                 // 가져온 데이터를 UI에 표시하는 로직 추가
 
                 // 가져온 데이터를 UI에 표시하는 로직 추가
@@ -114,6 +139,13 @@ public class CheckListCommunityComment extends AppCompatActivity {
                 if (content != null) {
                     binding.commentContent.setText(content);
                 }
+
+                if( timestamp !=null)
+                {
+                    binding.commentTime.setText(timestamp);
+                }
+
+
             }
 
             @Override

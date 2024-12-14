@@ -109,28 +109,25 @@ public class Bottom_backpack extends Fragment {
         // 체크박스와 삭제 버튼 초기화
         CheckBox newCheckBox = newItem.findViewById(R.id.checkBox);
 
-        // 만약 itemName이 null이거나 비어있다면 기본 텍스트 설정 방지
         if (itemName == null || itemName.trim().isEmpty()) {
             itemName = ""; // 빈 문자열로 설정하여 기본값이 표시되지 않도록 함
         }
         newCheckBox.setText(itemName);
         newCheckBox.setChecked(isChecked);
 
+        // 체크박스 상태 저장을 위해 리스너 설정
+        newCheckBox.setOnCheckedChangeListener((buttonView, isChecked1) -> saveChecklist());
+
         Button deleteButton = newItem.findViewById(R.id.delete_real_button); // 올바른 ID 사용
 
-        // 체크박스 및 삭제 버튼 리스너 설정
         initializeCheckBox(newCheckBox, deleteButton);
-
-        // 뷰를 컨테이너에 추가
         binding.checkBoxContainer.addView(newItem);
     }
 
     // 체크박스와 삭제 버튼 초기화
     private void initializeCheckBox(CheckBox checkBox, Button deleteButton) {
         // 체크박스 클릭 이벤트 및 체크 상태 변화 리스너 설정
-        checkBox.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            saveChecklist();
-        });
+        checkBox.setOnCheckedChangeListener((buttonView, isChecked) -> saveChecklist());
 
         checkBox.setOnClickListener(v -> {
             if (isEditMode) {

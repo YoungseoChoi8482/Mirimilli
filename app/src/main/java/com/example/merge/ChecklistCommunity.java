@@ -16,8 +16,11 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 public class ChecklistCommunity extends AppCompatActivity {
 
@@ -53,7 +56,39 @@ public class ChecklistCommunity extends AppCompatActivity {
         });
     }
 
+//    private void fetchPostsInRealtime() {
+//
+//        databaseReference.addValueEventListener(new ValueEventListener() {
+//            @SuppressLint("NotifyDataSetChanged")
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                checklistItems.clear(); // 기존 리스트 초기화
+//                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+//
+//                    String title = snapshot.child("title").getValue(String.class);
+//                    String content = snapshot.child("content").getValue(String.class);
+//                    String timestamp = "방금 전 | 익명"; // 예시로 임의의 시간 값 설정
+//
+//
+//                    String postId = snapshot.getKey();
+//                    if ( title != null && content != null && timestamp != null) {
+//                        checklistItems.add(new ChecklistItem( title, content, timestamp,postId));
+//                    }
+//                }
+//                adapter.notifyDataSetChanged(); // RecyclerView 업데이트
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError databaseError) {
+//                Toast.makeText(ChecklistCommunity.this, "데이터를 불러오지 못했습니다.", Toast.LENGTH_SHORT).show();
+//            }
+//        });
+//    }
+
     private void fetchPostsInRealtime() {
+        // 날짜 포맷터를 미리 생성하여 루프 내에서 매번 생성하지 않도록 함
+        final SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.getDefault());
+
         databaseReference.addValueEventListener(new ValueEventListener() {
             @SuppressLint("NotifyDataSetChanged")
             @Override
@@ -63,10 +98,29 @@ public class ChecklistCommunity extends AppCompatActivity {
 
                     String title = snapshot.child("title").getValue(String.class);
                     String content = snapshot.child("content").getValue(String.class);
-                    String timestamp = "방금 전 | 익명"; // 예시로 임의의 시간 값 설정
+
+                    // 타임스탬프를 Long 타입으로 가져오기
+                    Long timestampLong = snapshot.child("timestamp").getValue(Long.class);
+                    String timestamp;
+
+                    if (timestampLong != null) {
+                        // 밀리초 단위의 타임스탬프를 Date 객체로 변환
+                        Date date = new Date(timestampLong);
+
+                        // 날짜 포맷팅
+                        String formattedDate = sdf.format(date);
+
+                        // 추가 텍스트와 결합
+                        timestamp = formattedDate + " | 익명";
+                    } else {
+                        // 타임스탬프가 없을 경우 기본값 설정
+                        timestamp = "방금 전 | 익명";
+                    }
+
                     String postId = snapshot.getKey();
-                    if ( title != null && content != null && timestamp != null) {
-                        checklistItems.add(new ChecklistItem( title, content, timestamp,postId));
+
+                    if (title != null && content != null && timestamp != null) {
+                        checklistItems.add(new ChecklistItem(title, content, timestamp, postId));
                     }
                 }
                 adapter.notifyDataSetChanged(); // RecyclerView 업데이트
@@ -78,4 +132,4 @@ public class ChecklistCommunity extends AppCompatActivity {
             }
         });
     }
-}
+} // 체크리스트 커뮤니티

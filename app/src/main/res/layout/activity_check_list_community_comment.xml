@@ -36,11 +36,12 @@
             android:id="@+id/commentTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="16sp"
-            android:textColor="@color/black"
             android:layout_marginBottom="4dp"
+            android:text="익명"
+            android:textColor="@color/black"
+            android:textSize="16sp"
 
-             />
+            />
 
         <TextView
             android:id="@+id/commentContent"
@@ -69,7 +70,8 @@
             android:contentDescription="Bookmark Icon"
             android:clickable="true"
             android:focusable="true"
-            android:layout_marginTop="4dp" />
+            android:layout_marginTop="4dp"
+            android:visibility="gone"/>
     </LinearLayout>
 
     <com.google.android.material.appbar.MaterialToolbar

@@ -62,6 +62,8 @@ public class ChecklistAdapter extends RecyclerView.Adapter<ChecklistAdapter.View
             bookmarkIcon.setTag(!isSelected); // 상태 업데이트
         });
 
+
+
         holder.binding.someTextView.setOnClickListener(v -> {
             // 클릭 이벤트 처리. 현재 클릭이 잘 되긴함.
             Log.d("ChecklistAdapter", "Post clicked: " + item.getTitle());
@@ -101,4 +103,6 @@ public class ChecklistAdapter extends RecyclerView.Adapter<ChecklistAdapter.View
             this.binding = binding;
         }
     }
-}
+
+
+} // 체크리스트 커뮤니티 어댑터
