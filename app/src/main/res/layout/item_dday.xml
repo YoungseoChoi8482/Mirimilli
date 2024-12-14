@@ -18,14 +18,14 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
-            android:src="@drawable/ic_launcher_background" />
+            android:src="@drawable/milli" />
 
         <TextView
             android:id="@+id/dday_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="입대일"
-            android:textColor="@android:color/white"
+            android:textColor="@android:color/black"
             android:textSize="18sp"
             android:textStyle="bold"
             android:layout_alignParentStart="true"
@@ -37,7 +37,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="2022.05.22 (일) | 기념"
-            android:textColor="@android:color/white"
+            android:textColor="@android:color/black"
             android:textSize="14sp"
             android:layout_below="@id/dday_title"
             android:layout_alignParentStart="true"
@@ -50,7 +50,7 @@
             android:text="397일"
             android:textSize="36sp"
             android:textStyle="bold"
-            android:textColor="@android:color/white"
+            android:textColor="@android:color/black"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
             android:layout_margin="8dp" />
@@ -60,7 +60,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/baseline_border_color_24"
-            android:tint="@android:color/white"
             android:background="?android:attr/selectableItemBackgroundBorderless"
             android:layout_toStartOf="@id/delete_button"
             android:layout_alignParentTop="true"
@@ -72,7 +71,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/baseline_cancel_24"
-            android:tint="@android:color/white"
             android:background="?android:attr/selectableItemBackgroundBorderless"
             android:layout_alignParentEnd="true"
             android:layout_alignParentTop="true"
