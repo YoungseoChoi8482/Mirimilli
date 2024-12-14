@@ -207,13 +207,19 @@ public class Bottom_home extends Fragment {
 
                     // bottom_home.xml 레이아웃에 top1TextView, top2TextView, top3TextView가 있다고 가정
                     if (top3.size() > 0) {
-                        binding.top1TextView.setText("1위) " + top3.get(0).getName() + " " + top3.get(0).getRating() + "점");
+                        binding.top1TextView.setText(
+                                "1위) " + top3.get(0).getName() + " " + String.format("%.2f", top3.get(0).getRating()) + "점"
+                        );
                     }
                     if (top3.size() > 1) {
-                        binding.top2TextView.setText("2위) " + top3.get(1).getName() + " " + top3.get(1).getRating() + "점");
+                        binding.top2TextView.setText(
+                                "2위) " + top3.get(1).getName() + " " + String.format("%.2f", top3.get(1).getRating()) + "점"
+                        );
                     }
                     if (top3.size() > 2) {
-                        binding.top3TextView.setText("3위) " + top3.get(2).getName() + " " + top3.get(2).getRating() + "점");
+                        binding.top3TextView.setText(
+                                "3위) " + top3.get(2).getName() + " " + String.format("%.2f", top3.get(2).getRating()) + "점"
+                        );
                     }
                 })
                 .addOnFailureListener(e -> {

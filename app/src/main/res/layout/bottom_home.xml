@@ -67,7 +67,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:text="OOO님 아직 정보를 입력하지 않으셨어요!\n정보를 입력해주세요!"
+                android:text="아직 정보를 입력하지 않으셨어요!\n정보를 입력해주세요!"
                 android:textSize="16sp" />
 
             <Button
