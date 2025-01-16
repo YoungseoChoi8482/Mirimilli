@@ -1,2 +1,2 @@
 # Mirimilli
-android application // 사용자 인터페이스 및 실습 과제
+예비 군인들을 위한 길잡이! 미리밀리!
