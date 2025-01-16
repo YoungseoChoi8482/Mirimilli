@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        >
+
+
+        <TextView
+            android:fontFamily="@font/gangwon"
+
+            android:id="@+id/title"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text= "나에게 쓰는 편지"
+            android:layout_marginTop="5dp"
+            android:layout_gravity="center"
+            android:textSize = "40dp"
+            android:textColor = "@color/black"
+
+            />
+
+    </com.google.android.material.appbar.MaterialToolbar>
+
+
+    <FrameLayout
+        android:id="@+id/letter_to_me_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        />
+
+    <EditText
+        android:fontFamily="@font/gangwon"
+
+        android:id="@+id/etTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="작성하고 싶은 제목을 입력하세요."
+        android:background="@drawable/rounded_edittext"
+        android:padding="10dp"
+        android:textSize="18sp" />
+
+
+    <EditText
+        android:fontFamily="@font/gangwon"
+
+        android:id="@+id/etContent"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="16dp"
+        android:hint="훈련소 수료 후 나에게 하고 싶은 말을 작성하세요."
+        android:background="@drawable/rounded_edittext"
+        android:padding="10dp"
+        android:textSize="18sp"
+        android:gravity="top"
+        android:inputType="textMultiLine" />
+
+    <EditText
+        android:fontFamily="@font/gangwon"
+
+        android:id="@+id/etDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="수료 날짜를 입력해주세요."
+        android:background="@drawable/rounded_edittext"
+        android:padding="10dp"
+        android:textSize="18sp"
+        android:focusable="false"
+        android:clickable="true" />
+
+
+    <Button
+        android:fontFamily="@font/gangwon"
+
+        android:id="@+id/btn_saved"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="저장"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        />
+
+
+</LinearLayout>

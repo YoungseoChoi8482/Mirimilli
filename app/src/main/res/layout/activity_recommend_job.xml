@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/title"
+            android:fontFamily="@font/gangwon"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="보직을 추천해드릴게요!"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="24sp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:fontFamily="@font/gangwon"
+
+            android:id="@+id/subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="학과와 자격증을 선택해서 어떤 보직이 유리한지 알아봐요!"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="24dp" />
+
+        <TextView
+            android:fontFamily="@font/gangwon"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="학과"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:layout_marginBottom="8dp" />
+
+        <AutoCompleteTextView
+            android:fontFamily="@font/gangwon"
+
+            android:id="@+id/department_autocomplete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="학과를 입력하세요"
+            android:padding="12dp"
+            android:textColor="@color/black"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:fontFamily="@font/gangwon"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="자격증"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:layout_marginBottom="8dp" />
+
+        <AutoCompleteTextView
+            android:fontFamily="@font/gangwon"
+
+            android:id="@+id/certificate_autocomplete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="자격증을 입력하세요"
+            android:padding="12dp"
+            android:textColor="@color/black" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="24dp"
+            android:layout_marginTop="10dp">
+            <Button
+                android:fontFamily="@font/gangwon"
+
+                android:id="@+id/add_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="10dp"
+                android:text="자격증 추가"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:layout_marginStart="8dp" />
+
+            <Button
+                android:fontFamily="@font/gangwon"
+
+                android:id="@+id/completeBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="10dp"
+                android:text="입력 완료"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:layout_marginStart="8dp" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,31 @@
+
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.BottomMenu" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/black</item>
+
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
+    <style name="Base.Theme.MiriMilli" parent="Theme.AppCompat.DayNight.NoActionBar">
+    </style>
+    <style name="Theme.MaterialComponents" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+
+    </style>
+    <style name="Theme.BottomMenu" parent="Base.Theme.BottomMenu" />
+
+    <style name="MyButtonStyle" parent="Widget.AppCompat.Button">
+        <item name="android:backgroundTint">#7E7E7E</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+    <!-- 앱의 테마 -->
+    <style name="Theme.MyApp" parent="@android:style/TextAppearance.Small">
+        <!-- 기본 글꼴 설정 -->
+        <item name="android:fontFamily">@font/moneygraphy_rounded</item>
+    </style>
+    <style name="Theme.YourApp.Splash" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+
+    </style>
+
+</resources>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="8dp"
+    android:orientation="vertical"
+    android:background="@android:color/white">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp">
+
+        <ImageView
+            android:id="@+id/dday_image"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+
+            android:src="@drawable/white123" />
+
+        <TextView
+            android:fontFamily="@font/gangwon"
+
+            android:id="@+id/dday_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="입대일"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_margin="8dp" />
+
+        <TextView
+            android:fontFamily="@font/gangwon"
+
+            android:id="@+id/dday_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2022.05.22 (일) | 기념"
+            android:textColor="@android:color/black"
+            android:textSize="14sp"
+            android:layout_below="@id/dday_title"
+            android:layout_alignParentStart="true"
+            android:layout_margin="8dp" />
+
+        <TextView
+            android:fontFamily="@font/gangwon"
+
+            android:id="@+id/dday_remaining_days"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="397일"
+            android:textSize="36sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="8dp" />
+
+        <ImageButton
+            android:id="@+id/edit_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/baseline_border_color_24"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:layout_toStartOf="@id/delete_button"
+            android:layout_alignParentTop="true"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="8dp" />
+
+        <ImageButton
+            android:id="@+id/delete_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/baseline_cancel_24"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_margin="8dp" />
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

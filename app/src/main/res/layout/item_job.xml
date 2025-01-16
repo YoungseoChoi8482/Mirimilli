@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/selectableItemBackground"
+    android:orientation="vertical"
+    android:padding="12dp">
+
+    <!-- 보직 이름 -->
+    <TextView
+        android:fontFamily="@font/gangwon"
+
+        android:id="@+id/jobNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="보직 이름"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <!-- 카테고리 -->
+    <TextView
+        android:fontFamily="@font/gangwon"
+
+        android:id="@+id/jobCategoryTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="카테고리"
+        android:textSize="14sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:fontFamily="@font/gangwon"
+
+            android:id="@+id/jobReviewCountTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="리뷰 수: 10"
+            android:textSize="14sp" />
+
+        <TextView
+            android:fontFamily="@font/gangwon"
+
+            android:id="@+id/jobRatingTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="4dp"
+            android:text="/  평점: 10"
+            android:textSize="14sp" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:id="@+id/bookmark_icon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/scrab"
+            android:contentDescription="북마크 아이콘" />
+
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

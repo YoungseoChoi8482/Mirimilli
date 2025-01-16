@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    tools:context=".RegisterActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp">
+
+        <ImageButton
+            android:id="@+id/btn_back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/back"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="뒤로가기"
+            android:layout_gravity="start" />
+
+        <TextView
+            android:fontFamily="@font/gangwon"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:layout_marginTop="30dp"
+            android:text="회원가입"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:background="@color/btn"
+            android:textColor="#FFFFFF" />
+
+        <TextView
+            android:fontFamily="@font/gangwon"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="이메일"
+            android:layout_marginTop="30dp"
+            android:layout_marginStart="10dp"
+            android:textSize="16sp"
+            android:textColor="#000000" />
+
+        <EditText
+            android:fontFamily="@font/gangwon"
+
+            android:id="@+id/et_id"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/rounded_edittext"
+            android:hint="이메일을 입력하세요..."
+            android:inputType="textEmailAddress"
+            android:layout_marginTop="10dp"
+            android:padding="12dp" />
+
+        <TextView
+            android:fontFamily="@font/gangwon"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="비밀번호"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="10dp"
+            android:textSize="16sp"
+            android:textColor="#000000" />
+
+        <EditText
+            android:fontFamily="@font/gangwon"
+
+            android:id="@+id/et_password"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/rounded_edittext"
+            android:hint="비밀번호를 입력하세요..."
+            android:inputType="textPassword"
+            android:layout_marginTop="10dp"
+            android:padding="12dp" />
+
+        <TextView
+            android:fontFamily="@font/gangwon"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="이름"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="10dp"
+            android:textSize="16sp"
+            android:textColor="#000000" />
+
+        <EditText
+            android:fontFamily="@font/gangwon"
+
+            android:id="@+id/et_name"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/rounded_edittext"
+            android:hint="이름을 입력하세요..."
+            android:inputType="text"
+            android:layout_marginTop="10dp"
+            android:padding="12dp" />
+
+        <Button
+            android:fontFamily="@font/gangwon"
+
+            android:id="@+id/btn_register"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="30dp"
+            android:text="가입하기"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:backgroundTint="@color/btn"
+            android:textStyle="bold"
+            android:elevation="4dp" />
+    </LinearLayout>
+</ScrollView>

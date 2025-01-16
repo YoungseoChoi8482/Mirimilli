@@ -1,0 +1,66 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="8dp"
+ >
+
+    <!-- Left side with texts -->
+    <LinearLayout
+        android:id="@+id/someTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:clickable="true"
+        >
+
+        <!-- Title of the post -->
+        <TextView
+            android:fontFamily="@font/gangwon"
+
+            android:id="@+id/postTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="제목"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <!-- Content of the post -->
+        <TextView
+            android:fontFamily="@font/gangwon"
+
+            android:id="@+id/postContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="내용"
+            android:textSize="14sp"
+            android:layout_marginTop="4dp" />
+
+        <!-- Time or metadata -->
+        <TextView
+            android:fontFamily="@font/gangwon"
+
+            android:id="@+id/postTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="24분 전 | 익명"
+            android:textSize="12sp"
+            android:textColor="#888888"
+            android:layout_marginTop="2dp" />
+    </LinearLayout>
+
+    <!-- Bookmark Icon aligned to the right -->
+    <ImageView
+        android:id="@+id/star_icon"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/unfilled_star"
+        android:layout_gravity="center_vertical"
+        android:contentDescription="Star icon"
+        android:clickable="true"
+        android:focusable="true"
+        android:visibility="gone"
+        />
+</LinearLayout>

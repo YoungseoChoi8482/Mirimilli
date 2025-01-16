@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="8dp">
+
+    <TextView
+        android:fontFamily="@font/gangwon"
+
+        android:id="@+id/replyAuthor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="익명1"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:layout_marginEnd="8dp"/>
+
+    <TextView
+        android:fontFamily="@font/gangwon"
+
+        android:id="@+id/replyText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="숨겨서 가져가면 돼요!"
+        android:textSize="14sp"
+        android:layout_marginEnd="8dp"/>
+
+    <ImageView
+        android:id="@+id/likeIcon"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/unfilled_like"
+        android:contentDescription="Like Icon"
+        android:clickable="true"
+        android:focusable="true"
+        android:visibility="gone"/>
+
+    <TextView
+        android:fontFamily="@font/gangwon"
+
+        android:id="@+id/likeCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="100"
+        android:textSize="12sp"
+        android:visibility="gone"
+        android:layout_marginStart="4dp"/>
+</LinearLayout>
